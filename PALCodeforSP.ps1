@@ -3,12 +3,13 @@
 # Install-Module -Name Az -AllowClobber -Scope CurrentUser
 # Install-Module -Name Az.ManagementPartner
 
-# The main variables for this PS is TenantID and Service Principle name
+# The main variables for this PS are TenantID and Service Principal name
 
 $tenantId = "<tu-tenant-id>"
 $appId    = "<client-id-del-service-principal-SWONE>"
 $secret   = "<client-secret-del-service-principal-SWONE>"
 
+# $MPNId = 4509925 # Crayon MPN ID
 $MPNId = 3124318 # SoftwareONE MPN ID
 
 # Convertir el secreto en SecureString
@@ -28,8 +29,7 @@ if ($pal) {
 Remove-AzManagementPartner -PartnerId $(Get-AzManagementPartner).PartnerId -PassThru -Confirm:$false
 new-AzManagementPartner -PartnerId $MPNId
 
-# Get-AzManagementPartner: obtiene el MPN Id y demás información del Management Partner asociado al usuario
-# o entidad de servicio autenticada en ese momento.
+# Get-AzManagementPartner: obtiene el MPN Id y demás información del Management Partner asociado al usuario o entidad de servicio autenticada en ese momento.
 Get-AzManagementPartner
 
 # Logout of the current account
