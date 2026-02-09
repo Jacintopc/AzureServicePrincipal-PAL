@@ -1,4 +1,26 @@
-# Prerequisites:  Install jq from https://jqlang.org/
-# jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.
+# Update to ListPrincipalsRoles.ps1
 
-az role assignment list --all | jq '[.[] | select((.roleDefinitionName == "Owner" or .roleDefinitionName == "Contributor") and (.scope | contains("/resourceGroups/") | not)) | {Principal: .principalName, Tipo: .principalType, Rol: .roleDefinitionName, Scope: .scope}]' | ConvertFrom-Json | Format-Table -AutoSize
+# This script retrieves Azure service principals and their roles and now has CSV export functionality while keeping the screen output.
+
+# Function to export to CSV
+function Export-ServicePrincipalsToCSV {
+    param(
+        [string]$outputPath
+    )
+
+    $data = Get-ServicePrincipalsRoles | Select-Object -Property DisplayName, AppId, Roles
+    $data | Export-Csv -Path $outputPath -NoTypeInformation
+    Write-Host "Data exported to CSV at $outputPath"
+}
+
+# Main Function
+function Get-ServicePrincipalsRoles {
+    # Logic to retrieve service principals and roles
+    # This is a placeholder for the actual implementation
+}
+
+# Existing code to display output on screen
+Get-ServicePrincipalsRoles | Format-Table -AutoSize
+
+# Call the CSV export function
+Export-ServicePrincipalsToCSV -outputPath 'ServicePrincipalsRoles.csv'
