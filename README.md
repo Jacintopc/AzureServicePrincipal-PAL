@@ -48,6 +48,8 @@ az managementpartner create --partner-id <Tu_Partner_ID>
 ```
 
 ### Resumen de Beneficios
-**Atribución Ininterrumpida**: Al ser un SPN, el rol es "Active" 24/7, evitando el estado "Eligible" de PIM que bloquea las métricas.
-**Escalabilidad**: Al aplicarlo a nivel de Management Group, cualquier suscripción nueva creada bajo esa jerarquía heredará el permiso y el registro de influencia automáticamente.
-**Auditoría**: Separa las acciones del partner de las acciones de los usuarios nominales, facilitando el cumplimiento (compliance) interno.
+**Atribución Ininterrumpida** : Al ser un SPN, el rol es "Active" 24/7, evitando el estado "Eligible" de PIM que bloquea las métricas.
+
+**Escalabilidad** : Al aplicarlo a nivel de Management Group, cualquier suscripción nueva creada bajo esa jerarquía heredará el permiso y el registro de influencia automáticamente.
+
+**Auditoría** : Separa las acciones del partner de las acciones de los usuarios nominales, facilitando el cumplimiento (compliance) interno.
