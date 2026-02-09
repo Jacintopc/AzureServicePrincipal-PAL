@@ -12,3 +12,4 @@ az role assignment list --all `
 | Set-Content -Path $out -Encoding UTF8
 
 Write-Host "Informe generado: $out"
+Get-Content $out
