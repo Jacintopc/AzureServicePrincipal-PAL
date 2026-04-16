@@ -1,3 +1,5 @@
+# Asigna un PAL code a un Service Principal 
+
 # Requisitos (si no están instalados)
 
 # Install-Module -Name Az -AllowClobber -Scope CurrentUser
